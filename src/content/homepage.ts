@@ -1,3 +1,5 @@
+const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 export type HeroSlide = {
   id: string;
   eyebrow: string;
@@ -27,8 +29,8 @@ export const heroSlides: HeroSlide[] = [
     headline: 'MISSION-CRITICAL FASTENERS. BUILT WITH PRECISION.',
     description:
       'Precision manufacturing backed by controlled processes, in-process inspection, and dependable execution.',
-    video: '/assets/media/hero/precision-fasteners-01.mp4',
-    poster: '/assets/media/hero/precision-fasteners-poster.webp',
+    video: assetPath('assets/media/hero/precision-fasteners-01.mp4'),
+    poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
   {
     id: 'control',
@@ -36,8 +38,8 @@ export const heroSlides: HeroSlide[] = [
     headline: 'PRECISION AT EVERY PRODUCTION STAGE.',
     description:
       'Structured routing and dimensional checks keep requirements visible from material review through final release.',
-    video: '/assets/media/hero/precision-fasteners-02.mp4',
-    poster: '/assets/media/hero/precision-fasteners-poster.webp',
+    video: assetPath('assets/media/hero/precision-fasteners-02.mp4'),
+    poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
   {
     id: 'rfq',
@@ -48,8 +50,8 @@ export const heroSlides: HeroSlide[] = [
     headlineFinal: 'FOCUS.',
     description:
       'Share your drawing, part number, material, finish, quantity, and delivery needs for a focused RFQ review.',
-    video: '/assets/media/hero/precision-fasteners-04.mp4',
-    poster: '/assets/media/hero/precision-fasteners-poster.webp',
+    video: assetPath('assets/media/hero/precision-fasteners-04.mp4'),
+    poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
 ];
 
@@ -144,21 +146,21 @@ export const industries = [
     number: '01',
     title: 'Aerospace',
     description: 'Precision fastener requirements for demanding airborne and space-related applications.',
-    image: '/assets/images/industries/aerospace.webp',
+    image: assetPath('assets/images/industries/aerospace.webp'),
     alt: 'A technician dimensionally inspecting a precision threaded component',
   },
   {
     number: '02',
     title: 'Defense',
     description: 'Made-to-spec manufacturing support for controlled, mission-focused supply programs.',
-    image: '/assets/images/industries/defense.webp',
+    image: assetPath('assets/images/industries/defense.webp'),
     alt: 'Organized trays of precision fasteners beside inspection tools',
   },
   {
     number: '03',
     title: 'Precision Industrial Manufacturing',
     description: 'Consistent components for engineered equipment and exacting industrial assemblies.',
-    image: '/assets/images/industries/precision-industrial.webp',
+    image: assetPath('assets/images/industries/precision-industrial.webp'),
     alt: 'Precision machined components arranged in front of a modern CNC machine',
   },
 ];

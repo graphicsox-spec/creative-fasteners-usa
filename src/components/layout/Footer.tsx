@@ -6,7 +6,7 @@ export function Footer() {
       <div className="site-footer__top shell">
         <div className="site-footer__brand">
           <a href="#home" aria-label="Creative Fasteners USA home">
-            <img src="/assets/brand/logo-white.svg" alt="Creative Fasteners USA" width="584" height="166" />
+            <img src={`${import.meta.env.BASE_URL}assets/brand/logo-white.svg`} alt="Creative Fasteners USA" width="584" height="166" />
           </a>
           <p>Precision fastener manufacturing support for demanding aerospace, defense, and industrial requirements.</p>
         </div>

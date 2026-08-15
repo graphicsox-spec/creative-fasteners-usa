@@ -47,7 +47,7 @@ export default function App() {
 
             <Reveal className="intro-visual" delay={120}>
               <img
-                src="/assets/images/industries/aerospace.webp"
+                src={`${import.meta.env.BASE_URL}assets/images/industries/aerospace.webp`}
                 alt="Precision dimensional inspection of a threaded component"
                 width="1280"
                 height="768"

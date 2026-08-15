@@ -94,7 +94,7 @@ export function Header() {
       <div className="site-header__main">
         <div className="site-header__inner shell">
           <a className="site-header__brand" href="#home" aria-label="Creative Fasteners USA home" onClick={closeNavigation}>
-            <img src="/assets/brand/logo-color.svg" alt="Creative Fasteners USA" width="584" height="166" />
+            <img src={`${import.meta.env.BASE_URL}assets/brand/logo-color.svg`} alt="Creative Fasteners USA" width="584" height="166" />
           </a>
 
           <button
