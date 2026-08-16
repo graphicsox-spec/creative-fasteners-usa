@@ -2,6 +2,7 @@ const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 export type HeroSlide = {
   id: string;
+  enabled?: boolean;
   eyebrow: string;
   headline: string;
   headlineLead?: string;
@@ -22,9 +23,23 @@ export const navigation = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export const heroSlides: HeroSlide[] = [
+const configuredHeroSlides: HeroSlide[] = [
+  {
+    id: 'rfq',
+    enabled: true,
+    eyebrow: 'MADE TO SPEC • READY FOR REVIEW',
+    headline: 'YOUR REQUIREMENTS. OUR MANUFACTURING FOCUS.',
+    headlineLead: 'YOUR REQUIREMENTS.',
+    headlineRest: 'OUR MANUFACTURING',
+    headlineFinal: 'FOCUS.',
+    description:
+      'Share your drawing, part number, material, finish, quantity, and delivery needs for a focused RFQ review.',
+    video: assetPath('assets/media/hero/precision-fasteners-featured.mp4'),
+    poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
+  },
   {
     id: 'precision',
+    enabled: false,
     eyebrow: 'AEROSPACE • DEFENSE • PRECISION',
     headline: 'MISSION-CRITICAL FASTENERS. BUILT WITH PRECISION.',
     description:
@@ -34,6 +49,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: 'control',
+    enabled: false,
     eyebrow: 'CONTROLLED PROCESSES • VISIBLE QUALITY',
     headline: 'PRECISION AT EVERY PRODUCTION STAGE.',
     description:
@@ -41,19 +57,11 @@ export const heroSlides: HeroSlide[] = [
     video: assetPath('assets/media/hero/precision-fasteners-02.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
-  {
-    id: 'rfq',
-    eyebrow: 'MADE TO SPEC • READY FOR REVIEW',
-    headline: 'YOUR REQUIREMENTS. OUR MANUFACTURING FOCUS.',
-    headlineLead: 'YOUR REQUIREMENTS.',
-    headlineRest: 'OUR MANUFACTURING',
-    headlineFinal: 'FOCUS.',
-    description:
-      'Share your drawing, part number, material, finish, quantity, and delivery needs for a focused RFQ review.',
-    video: assetPath('assets/media/hero/precision-fasteners-04.mp4'),
-    poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
-  },
 ];
+
+export const heroSlides = configuredHeroSlides.filter(
+  (slide) => slide.enabled !== false,
+);
 
 export const trustItems = [
   'Precision Manufacturing',

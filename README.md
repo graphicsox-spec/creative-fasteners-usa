@@ -60,9 +60,9 @@ Keep the filenames unchanged to replace these assets without editing code. Logo 
 
 ## Replace hero media
 
-- Slide 1: `public/assets/media/hero/precision-fasteners-01.mp4`
-- Slide 2: `public/assets/media/hero/precision-fasteners-02.mp4`
-- Slide 3: `public/assets/media/hero/precision-fasteners-04.mp4`
+- Slide 1: `public/assets/media/hero/precision-fasteners-featured.mp4`
+- Slide 2: `public/assets/media/hero/precision-fasteners-01.mp4`
+- Slide 3: `public/assets/media/hero/precision-fasteners-02.mp4`
 - Shared poster: `public/assets/media/hero/precision-fasteners-poster.webp`
 
 Use muted, web-optimized MP4 files. Mobile visitors and visitors who prefer reduced motion receive the poster-first experience.

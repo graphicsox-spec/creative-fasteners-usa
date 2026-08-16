@@ -1,13 +1,13 @@
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
-import { CapabilityCard } from './components/sections/CapabilityCard';
+import { CapabilityConsole } from './components/sections/CapabilityConsole';
 import { HeroSlider } from './components/sections/HeroSlider';
 import { IndustryPanel } from './components/sections/IndustryPanel';
 import { QualityTimeline } from './components/sections/QualityTimeline';
 import { RFQForm } from './components/sections/RFQForm';
 import { Reveal } from './components/ui/Reveal';
 import { SectionHeading } from './components/ui/SectionHeading';
-import { capabilities, differentiators, industries } from './content/homepage';
+import { differentiators, industries } from './content/homepage';
 
 function CrosshairIcon() {
   return (
@@ -80,13 +80,9 @@ export default function App() {
                 <p className="section-note">Capability availability, process route, material compatibility, and specification fit are confirmed during RFQ review.</p>
               </div>
             </Reveal>
-            <div className="capability-grid">
-              {capabilities.map((capability, index) => (
-                <Reveal key={capability.number} delay={index * 55}>
-                  <CapabilityCard {...capability} />
-                </Reveal>
-              ))}
-            </div>
+            <Reveal delay={80}>
+              <CapabilityConsole />
+            </Reveal>
           </div>
         </section>
 
