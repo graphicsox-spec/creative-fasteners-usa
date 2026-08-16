@@ -3168,6 +3168,12 @@ h3 {
   }
 
   .hero__playback {
+    width: 2.75rem;
+    margin-left: auto;
+    padding-inline: 0;
+  }
+
+  .hero__playback span {
     display: none;
   }
 

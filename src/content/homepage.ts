@@ -39,7 +39,7 @@ const configuredHeroSlides: HeroSlide[] = [
   },
   {
     id: 'precision',
-    enabled: false,
+    enabled: true,
     eyebrow: 'AEROSPACE • DEFENSE • PRECISION',
     headline: 'MISSION-CRITICAL FASTENERS. BUILT WITH PRECISION.',
     description:
@@ -49,7 +49,7 @@ const configuredHeroSlides: HeroSlide[] = [
   },
   {
     id: 'control',
-    enabled: false,
+    enabled: true,
     eyebrow: 'CONTROLLED PROCESSES • VISIBLE QUALITY',
     headline: 'PRECISION AT EVERY PRODUCTION STAGE.',
     description:

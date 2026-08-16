@@ -21,21 +21,11 @@ function PlaybackIcon({ paused }: { paused: boolean }) {
 export function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [desktopVideo, setDesktopVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reducedMotion = useReducedMotion();
   const hasMultipleSlides = heroSlides.length > 1;
   const activeSlide = heroSlides[activeIndex];
-
-  useEffect(() => {
-    const media = window.matchMedia('(min-width: 768px)');
-    const syncVideoPreference = () => setDesktopVideo(media.matches);
-    syncVideoPreference();
-    media.addEventListener('change', syncVideoPreference);
-    return () => media.removeEventListener('change', syncVideoPreference);
-  }, []);
-
-  const showVideo = desktopVideo && !reducedMotion;
+  const showVideo = !reducedMotion;
 
   useEffect(() => {
     const video = videoRef.current;
