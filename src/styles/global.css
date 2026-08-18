@@ -3139,19 +3139,43 @@ h3 {
     height: 85svh;
     min-height: 32rem;
     max-height: none;
+    background: var(--navy);
   }
 
-  .hero__media img {
+  .hero__media {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
+  }
+
+  .hero__media img,
+  .hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center center;
   }
 
-  /* Bottom-to-top gradient only — keeps video visible at top */
+  /* Seamless gradient: crystal clear video on top, smooth dark fade starting at 35%, solid dark at 75%+ */
   .hero__overlay {
     background: none;
   }
 
   .hero__overlay::after {
-    background: linear-gradient(0deg, rgba(5, 13, 27, 0.95) 0%, rgba(5, 13, 27, 0.7) 35%, rgba(5, 13, 27, 0.15) 60%, transparent 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(5, 13, 27, 0.4) 50%,
+      rgba(5, 13, 27, 0.82) 65%,
+      rgba(5, 13, 27, 0.98) 75%,
+      rgba(5, 13, 27, 1) 85%,
+      rgba(5, 13, 27, 1) 100%
+    );
   }
 
   .hero__grid {
