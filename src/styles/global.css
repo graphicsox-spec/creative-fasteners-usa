@@ -3185,12 +3185,12 @@ h3 {
     display: none;
   }
 
-  /* Content at the bottom - shifted lower */
+  /* Content at the bottom - lifted 10px from controls */
   .hero__content {
     min-height: 0;
     align-items: flex-end;
     padding-top: 0;
-    padding-bottom: 4.8rem;
+    padding-bottom: 5.45rem;
   }
 
   /* Center-aligned text */
