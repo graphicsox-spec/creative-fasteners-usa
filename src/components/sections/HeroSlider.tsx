@@ -13,7 +13,7 @@ function ArrowIcon({ direction }: { direction: 'left' | 'right' }) {
 function PlaybackIcon({ paused }: { paused: boolean }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      {paused ? <path d="M8 5v14l11-7z" /> : <path d="M7 5h4v14H7zm6 0h4v14h-4z" />}
+      {paused ? <path d="M8 5v14l11-7z" /> : <path d="M6 5h3.5v14H6zm8.5 0H18v14h-3.5z" />}
     </svg>
   );
 }

@@ -534,17 +534,21 @@ h3 {
   display: block;
   width: 1.25rem;
   height: 2px;
-  margin: 0.35rem auto;
+  margin: 0.18rem auto;
   background: currentColor;
-  transition: transform 180ms ease;
+  transition: transform 180ms ease, opacity 180ms ease;
 }
 
 .menu-toggle[aria-expanded="true"] span:first-child {
-  transform: translateY(4px) rotate(45deg);
+  transform: translateY(5.5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
 }
 
 .menu-toggle[aria-expanded="true"] span:last-child {
-  transform: translateY(-4px) rotate(-45deg);
+  transform: translateY(-5.5px) rotate(-45deg);
 }
 
 /* Hero */
@@ -761,12 +765,17 @@ h3 {
   color: var(--navy);
 }
 
-.hero__arrows svg,
-.hero__playback svg {
+.hero__arrows svg {
   width: 1rem;
   fill: currentColor;
   stroke: currentColor;
   stroke-width: 1.7;
+}
+
+.hero__playback svg {
+  width: 1rem;
+  fill: currentColor;
+  stroke: none;
 }
 
 .hero__pagination {
@@ -2870,9 +2879,9 @@ h3 {
     display: block;
     width: 1.15rem;
     height: 2px;
-    margin: 0.22rem auto;
+    margin: 0.16rem auto;
     background: currentColor;
-    transition: transform 180ms ease;
+    transition: transform 180ms ease, opacity 180ms ease;
   }
 
   .site-search__toggle--header:hover,
