@@ -508,13 +508,14 @@ h3 {
 
 .menu-toggle {
   display: none;
-  width: 2.85rem;
-  height: 2.85rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
   border: 1px solid rgba(5, 13, 27, 0.24);
   background: var(--white);
   color: var(--navy);
   cursor: pointer;
-  place-items: center;
+  box-sizing: border-box;
 }
 
 /* Hidden on desktop, shown on mobile via media query */
@@ -532,15 +533,15 @@ h3 {
 
 .menu-toggle span {
   display: block;
-  width: 1.25rem;
+  width: 1.2rem;
   height: 2px;
-  margin: 0.11rem auto;
+  margin: 0;
   background: currentColor;
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
 .menu-toggle[aria-expanded="true"] span:first-child {
-  transform: translateY(4.2px) rotate(45deg);
+  transform: translateY(10.5px) rotate(45deg);
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -548,7 +549,7 @@ h3 {
 }
 
 .menu-toggle[aria-expanded="true"] span:last-child {
-  transform: translateY(-4.2px) rotate(-45deg);
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 
 /* Hero */
@@ -2852,17 +2853,35 @@ h3 {
   }
 
   /* Search icon and hamburger toggle - exact same box, border, line weight */
-  .site-search__toggle--header,
-  .menu-toggle {
+  .site-search__toggle--header {
     display: grid;
-    width: 2.85rem;
-    height: 2.85rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
     flex: 0 0 auto;
     border: 1px solid rgba(5, 13, 27, 0.24);
     background: var(--white);
     color: var(--navy);
     cursor: pointer;
     place-items: center;
+    box-sizing: border-box;
+    transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    flex: 0 0 auto;
+    border: 1px solid rgba(5, 13, 27, 0.24);
+    background: var(--white);
+    color: var(--navy);
+    cursor: pointer;
+    box-sizing: border-box;
     transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
   }
 
@@ -2879,9 +2898,21 @@ h3 {
     display: block;
     width: 1.15rem;
     height: 2px;
-    margin: 0.11rem auto;
+    margin: 0;
     background: currentColor;
     transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(10.5px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-10.5px) rotate(-45deg);
   }
 
   .site-search__toggle--header:hover,
