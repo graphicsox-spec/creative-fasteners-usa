@@ -534,13 +534,13 @@ h3 {
   display: block;
   width: 1.25rem;
   height: 2px;
-  margin: 0.18rem auto;
+  margin: 0.11rem auto;
   background: currentColor;
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
 .menu-toggle[aria-expanded="true"] span:first-child {
-  transform: translateY(5.5px) rotate(45deg);
+  transform: translateY(4.2px) rotate(45deg);
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -548,7 +548,7 @@ h3 {
 }
 
 .menu-toggle[aria-expanded="true"] span:last-child {
-  transform: translateY(-5.5px) rotate(-45deg);
+  transform: translateY(-4.2px) rotate(-45deg);
 }
 
 /* Hero */
@@ -2879,7 +2879,7 @@ h3 {
     display: block;
     width: 1.15rem;
     height: 2px;
-    margin: 0.16rem auto;
+    margin: 0.11rem auto;
     background: currentColor;
     transition: transform 180ms ease, opacity 180ms ease;
   }
