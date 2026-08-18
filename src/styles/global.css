@@ -615,7 +615,10 @@ h3 {
   content: "";
 }
 
-.hero__grid,
+.hero__grid {
+  display: none;
+}
+
 .quality__grid {
   background-image:
     linear-gradient(rgba(67, 143, 202, 0.08) 1px, transparent 1px),
@@ -3179,16 +3182,15 @@ h3 {
   }
 
   .hero__grid {
-    background-size: 5rem 5rem;
-    mask-image: none;
+    display: none;
   }
 
-  /* Content at the bottom */
+  /* Content at the bottom - shifted lower */
   .hero__content {
     min-height: 0;
     align-items: flex-end;
     padding-top: 0;
-    padding-bottom: 7.5rem;
+    padding-bottom: 4.8rem;
   }
 
   /* Center-aligned text */
@@ -3207,6 +3209,7 @@ h3 {
     justify-content: center;
     font-size: 0.63rem;
     line-height: 1.4;
+    margin-bottom: 0.65rem;
   }
 
   .hero__eyebrow span {
@@ -3216,6 +3219,7 @@ h3 {
   .hero h1 {
     max-width: none;
     margin-inline: auto;
+    margin-bottom: 0.75rem;
     font-size: clamp(1.35rem, 5.5vw, 2.05rem);
     line-height: 1.12;
     text-wrap: balance;
@@ -3230,6 +3234,7 @@ h3 {
   .hero__description {
     max-width: none;
     margin-inline: auto;
+    margin-bottom: 1.25rem;
     font-size: 0.88rem;
     line-height: 1.55;
   }
