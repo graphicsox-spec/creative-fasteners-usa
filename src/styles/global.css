@@ -3225,12 +3225,12 @@ h3 {
     display: none;
   }
 
-  /* Content at the bottom - positioned above controls & trust strip (+5px lift) */
+  /* Content at the bottom - positioned above controls & trust strip */
   .hero__content {
     min-height: 0;
     align-items: flex-end;
     padding-top: 0;
-    padding-bottom: 8.36rem;
+    padding-bottom: 8.67rem;
   }
 
   /* Center-aligned text */
@@ -3302,7 +3302,7 @@ h3 {
   }
 
   .hero__controls {
-    bottom: 4.11rem;
+    bottom: 4.42rem;
     gap: 0.55rem;
   }
 
