@@ -20,12 +20,20 @@ function PlaybackIcon({ paused }: { paused: boolean }) {
 
 export function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [trustIndex, setTrustIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reducedMotion = useReducedMotion();
   const hasMultipleSlides = heroSlides.length > 1;
   const activeSlide = heroSlides[activeIndex];
   const showVideo = !reducedMotion;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTrustIndex((prev) => (prev + 1) % trustItems.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -159,7 +167,10 @@ export function HeroSlider() {
       <div className="trust-strip" aria-label="Service principles">
         <div className="trust-strip__inner shell">
           {trustItems.map((item, index) => (
-            <div className="trust-strip__item" key={item}>
+            <div
+              className={`trust-strip__item ${index === trustIndex ? 'is-active' : ''}`}
+              key={item}
+            >
               <span>{String(index + 1).padStart(2, '0')}</span>
               <strong>{item}</strong>
             </div>
