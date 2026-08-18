@@ -98,6 +98,20 @@ export function Header() {
           </a>
 
           <button
+            className="site-search__toggle site-search__toggle--header"
+            type="button"
+            aria-expanded={searchOpen}
+            aria-controls="site-search-panel"
+            aria-label={searchOpen ? 'Close site search' : 'Open site search'}
+            onClick={toggleSearch}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.7" cy="10.7" r="5.7" />
+              <path d="m15 15 4.4 4.4" />
+            </svg>
+          </button>
+
+          <button
             className="menu-toggle"
             type="button"
             aria-expanded={menuOpen}
@@ -112,11 +126,27 @@ export function Header() {
             <span />
           </button>
 
+          <div
+            className={`site-nav__backdrop ${menuOpen ? 'site-nav__backdrop--visible' : ''}`}
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+
           <nav
             id="primary-navigation"
             className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}
             aria-label="Primary navigation"
           >
+            <button
+              className="site-nav__close"
+              type="button"
+              aria-label="Close navigation menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
             <ul>
               {navigation.map((item) => (
                 <li key={item.label}>
@@ -129,19 +159,6 @@ export function Header() {
             <a className="button button--primary site-nav__cta" href="#rfq" onClick={closeNavigation}>
               Request a Quote
             </a>
-            <button
-              className="site-search__toggle"
-              type="button"
-              aria-expanded={searchOpen}
-              aria-controls="site-search-panel"
-              aria-label={searchOpen ? 'Close site search' : 'Open site search'}
-              onClick={toggleSearch}
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="10.7" cy="10.7" r="5.7" />
-                <path d="m15 15 4.4 4.4" />
-              </svg>
-            </button>
           </nav>
         </div>
       </div>
