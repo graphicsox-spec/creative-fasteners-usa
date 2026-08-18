@@ -86,8 +86,16 @@ export function Header() {
     <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
       <div className="site-header__utility">
         <div className="site-header__utility-inner shell">
-          <span>RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation</span>
-          <span>Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision</span>
+          <div className="site-header__utility-marquee">
+            <span className="site-header__utility-track">
+              <span>RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation&nbsp;&nbsp;•&nbsp;&nbsp;Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span aria-hidden="true">RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation&nbsp;&nbsp;•&nbsp;&nbsp;Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </span>
+          </div>
+          <div className="site-header__utility-desktop">
+            <span>RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation</span>
+            <span>Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision</span>
+          </div>
         </div>
       </div>
 
