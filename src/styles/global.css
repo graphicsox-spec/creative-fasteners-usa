@@ -3211,13 +3211,25 @@ h3 {
   }
 
   .hero__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
     width: 100%;
   }
 
   .hero__actions .button {
-    width: min(100%, 14.4rem);
+    flex: 1 1 0;
+    max-width: 12.5rem;
+    width: auto;
+    height: 3.25rem;
+    min-height: 3.25rem;
+    padding-inline: 0.65rem;
+    font-size: clamp(0.6rem, 2.6vw, 0.72rem);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
   }
 
   .hero__controls {
