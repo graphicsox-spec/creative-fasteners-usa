@@ -3230,7 +3230,7 @@ h3 {
     min-height: 0;
     align-items: flex-end;
     padding-top: 0;
-    padding-bottom: 7.75rem;
+    padding-bottom: 8.05rem;
   }
 
   /* Center-aligned text */
@@ -3302,7 +3302,7 @@ h3 {
   }
 
   .hero__controls {
-    bottom: 3.5rem;
+    bottom: 3.8rem;
     gap: 0.55rem;
   }
 
@@ -3320,15 +3320,15 @@ h3 {
     display: none;
   }
 
-  /* Thin animated trust strip at the bottom of hero on mobile */
+  /* Thin animated trust strip at the bottom of hero on mobile (+5px height) */
   .trust-strip {
     position: absolute;
     z-index: 4;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 2.75rem;
-    min-height: 2.75rem;
+    height: 3.05rem;
+    min-height: 3.05rem;
     border-top: 1px solid rgba(19, 157, 255, 0.4);
     background: rgba(5, 13, 27, 0.98);
     overflow: hidden;
