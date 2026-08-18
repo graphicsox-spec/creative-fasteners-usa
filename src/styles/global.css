@@ -500,14 +500,21 @@ h3 {
   font-size: 0.7rem;
 }
 
+.site-header__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .menu-toggle {
   display: none;
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
+  width: 2.85rem;
+  height: 2.85rem;
+  border: 1px solid rgba(5, 13, 27, 0.24);
+  background: var(--white);
+  color: var(--navy);
   cursor: pointer;
+  place-items: center;
 }
 
 /* Hidden on desktop, shown on mobile via media query */
@@ -705,7 +712,7 @@ h3 {
 }
 
 .hero__actions .button {
-  width: 17.5rem;
+  width: 14rem;
   height: 3.5rem;
   min-height: 3.5rem;
   padding-inline: 1.25rem;
@@ -2825,11 +2832,19 @@ h3 {
     clip-path: none;
   }
 
-  /* Search icon visible in header bar on mobile */
-  .site-search__toggle--header {
+  .site-header__controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  /* Search icon and hamburger toggle - exact same box, border, line weight */
+  .site-search__toggle--header,
+  .menu-toggle {
     display: grid;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 2.85rem;
+    height: 2.85rem;
     flex: 0 0 auto;
     border: 1px solid rgba(5, 13, 27, 0.24);
     background: var(--white);
@@ -2839,24 +2854,34 @@ h3 {
     transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
   }
 
-  .site-header--scrolled .site-search__toggle--header {
-    border-color: rgba(5, 13, 27, 0.24);
-    background: var(--white);
-    color: var(--navy);
-  }
-
   .site-search__toggle--header svg {
     width: 1.15rem;
+    height: 1.15rem;
     fill: none;
     stroke: currentColor;
     stroke-linecap: square;
     stroke-width: 1.8;
   }
 
-  .menu-toggle {
+  .menu-toggle span {
     display: block;
-    position: relative;
-    z-index: 2;
+    width: 1.15rem;
+    height: 2px;
+    margin: 0.22rem auto;
+    background: currentColor;
+    transition: transform 180ms ease;
+  }
+
+  .site-search__toggle--header:hover,
+  .menu-toggle:hover {
+    border-color: var(--electric);
+  }
+
+  .site-header--scrolled .site-search__toggle--header,
+  .site-header--scrolled .menu-toggle {
+    border-color: rgba(5, 13, 27, 0.24);
+    background: var(--white);
+    color: var(--navy);
   }
 
   /* Backdrop overlay behind drawer */
@@ -3111,8 +3136,8 @@ h3 {
   }
 
   .hero {
-    height: 75svh;
-    min-height: 28rem;
+    height: 85svh;
+    min-height: 32rem;
     max-height: none;
   }
 
@@ -3148,11 +3173,9 @@ h3 {
     text-align: center;
   }
 
-  .hero__headline-lead {
-    white-space: normal;
-  }
-
+  .hero__headline-lead,
   .hero__headline-rest {
+    white-space: normal;
     max-width: none;
   }
 
@@ -3169,12 +3192,15 @@ h3 {
   .hero h1 {
     max-width: none;
     margin-inline: auto;
-    font-size: clamp(1.6rem, 6.5vw, 2.4rem);
-    line-height: 1.05;
+    font-size: clamp(1.35rem, 5.5vw, 2.05rem);
+    line-height: 1.12;
+    text-wrap: balance;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .hero h1 span {
-    display: inline;
+    display: block;
   }
 
   .hero__description {
@@ -3191,7 +3217,7 @@ h3 {
   }
 
   .hero__actions .button {
-    width: min(100%, 18rem);
+    width: min(100%, 14.4rem);
   }
 
   .hero__controls {

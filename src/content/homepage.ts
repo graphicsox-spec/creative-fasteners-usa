@@ -30,8 +30,7 @@ const configuredHeroSlides: HeroSlide[] = [
     eyebrow: 'MADE TO SPEC • READY FOR REVIEW',
     headline: 'YOUR REQUIREMENTS. OUR MANUFACTURING FOCUS.',
     headlineLead: 'YOUR REQUIREMENTS.',
-    headlineRest: 'OUR MANUFACTURING',
-    headlineFinal: 'FOCUS.',
+    headlineRest: 'OUR MANUFACTURING FOCUS.',
     description:
       'Share your drawing, part number, material, finish, quantity, and delivery needs for a focused RFQ review.',
     video: assetPath('assets/media/hero/Video-081826-V1.mp4'),

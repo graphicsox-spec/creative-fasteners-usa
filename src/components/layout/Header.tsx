@@ -97,34 +97,36 @@ export function Header() {
             <img src={`${import.meta.env.BASE_URL}assets/brand/logo-color.svg`} alt="Creative Fasteners USA" width="584" height="166" />
           </a>
 
-          <button
-            className="site-search__toggle site-search__toggle--header"
-            type="button"
-            aria-expanded={searchOpen}
-            aria-controls="site-search-panel"
-            aria-label={searchOpen ? 'Close site search' : 'Open site search'}
-            onClick={toggleSearch}
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="10.7" cy="10.7" r="5.7" />
-              <path d="m15 15 4.4 4.4" />
-            </svg>
-          </button>
+          <div className="site-header__controls">
+            <button
+              className="site-search__toggle site-search__toggle--header"
+              type="button"
+              aria-expanded={searchOpen}
+              aria-controls="site-search-panel"
+              aria-label={searchOpen ? 'Close site search' : 'Open site search'}
+              onClick={toggleSearch}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10.7" cy="10.7" r="5.7" />
+                <path d="m15 15 4.4 4.4" />
+              </svg>
+            </button>
 
-          <button
-            className="menu-toggle"
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="primary-navigation"
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            onClick={() => {
-              setSearchOpen(false);
-              setMenuOpen((open) => !open);
-            }}
-          >
-            <span />
-            <span />
-          </button>
+            <button
+              className="menu-toggle"
+              type="button"
+              aria-expanded={menuOpen}
+              aria-controls="primary-navigation"
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              onClick={() => {
+                setSearchOpen(false);
+                setMenuOpen((open) => !open);
+              }}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
 
           <div
             className={`site-nav__backdrop ${menuOpen ? 'site-nav__backdrop--visible' : ''}`}
