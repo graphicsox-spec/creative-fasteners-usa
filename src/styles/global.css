@@ -779,7 +779,7 @@ h3 {
 
 .hero__controls {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   right: 0;
   bottom: 6.2rem;
   left: 0;
