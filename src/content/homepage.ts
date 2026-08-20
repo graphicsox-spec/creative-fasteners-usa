@@ -33,7 +33,7 @@ const configuredHeroSlides: HeroSlide[] = [
     headlineRest: 'OUR MANUFACTURING FOCUS.',
     description:
       'Share your drawing, part number, material, finish, quantity, and delivery needs for a focused RFQ review.',
-    video: assetPath('assets/media/hero/Video-081826-V1.mp4'),
+    video: assetPath('assets/media/hero/Video-01.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
   {
@@ -43,7 +43,7 @@ const configuredHeroSlides: HeroSlide[] = [
     headline: 'MISSION-CRITICAL FASTENERS. BUILT WITH PRECISION.',
     description:
       'Precision manufacturing backed by controlled processes, in-process inspection, and dependable execution.',
-    video: assetPath('assets/media/hero/Video-081826-V2.mp4'),
+    video: assetPath('assets/media/hero/Video-02.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
   {
@@ -53,7 +53,7 @@ const configuredHeroSlides: HeroSlide[] = [
     headline: 'PRECISION AT EVERY PRODUCTION STAGE.',
     description:
       'Structured routing and dimensional checks keep requirements visible from material review through final release.',
-    video: assetPath('assets/media/hero/Video-081826-V3.mp4'),
+    video: assetPath('assets/media/hero/Video-03.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
 ];
