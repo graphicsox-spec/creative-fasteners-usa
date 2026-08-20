@@ -607,6 +607,7 @@ h3 {
   height: 100%;
   overflow: hidden;
   background-color: var(--navy);
+  z-index: 1;
 }
 
 .hero__slide-media {
@@ -645,6 +646,8 @@ h3 {
 }
 
 .hero__overlay {
+  z-index: 2;
+  pointer-events: none;
   background: linear-gradient(90deg, rgba(5, 13, 27, 0.97) 0%, rgba(5, 13, 27, 0.83) 38%, rgba(5, 13, 27, 0.25) 72%, rgba(5, 13, 27, 0.42) 100%);
 }
 
@@ -669,7 +672,7 @@ h3 {
 
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   grid-template-areas: "stack";
   align-items: center;
