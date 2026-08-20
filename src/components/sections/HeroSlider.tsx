@@ -22,10 +22,9 @@ export function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [trustIndex, setTrustIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const reducedMotion = useReducedMotion();
   const hasMultipleSlides = heroSlides.length > 1;
-  const activeSlide = heroSlides[activeIndex];
   const showVideo = !reducedMotion;
 
   useEffect(() => {
@@ -35,29 +34,48 @@ export function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
 
+  // Play active video and smoothly pause non-active videos after cinematic crossfade
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video || !showVideo) return;
+    if (!showVideo) return;
 
-    video.muted = true;
-    if (paused || document.hidden) {
-      video.pause();
-    } else {
-      video.play().catch(() => setPaused(true));
+    const currentVideo = videoRefs.current[activeIndex];
+    if (currentVideo) {
+      currentVideo.muted = true;
+      if (paused || document.hidden) {
+        currentVideo.pause();
+      } else {
+        currentVideo.currentTime = 0;
+        currentVideo.play().catch(() => setPaused(true));
+      }
     }
+
+    // Keep non-active videos running during the 1.2s crossfade transition, then pause them
+    const pauseTimeout = setTimeout(() => {
+      videoRefs.current.forEach((vid, idx) => {
+        if (idx !== activeIndex && vid) {
+          vid.pause();
+        }
+      });
+    }, 1200);
+
+    return () => clearTimeout(pauseTimeout);
   }, [activeIndex, paused, showVideo]);
 
+  // Handle visibility changes (browser tab switch)
   useEffect(() => {
     const handleVisibility = () => {
-      const video = videoRef.current;
-      if (!video) return;
-      if (document.hidden) video.pause();
-      else if (!paused) video.play().catch(() => setPaused(true));
+      const currentVideo = videoRefs.current[activeIndex];
+      if (!currentVideo || !showVideo) return;
+      if (document.hidden) {
+        currentVideo.pause();
+      } else if (!paused) {
+        currentVideo.play().catch(() => setPaused(true));
+      }
     };
 
     document.addEventListener('visibilitychange', handleVisibility);
     return () => document.removeEventListener('visibilitychange', handleVisibility);
-  }, [paused]);
+  }, [activeIndex, paused, showVideo]);
 
   const moveSlide = (direction: number) => {
     setActiveIndex((current) => (current + direction + heroSlides.length) % heroSlides.length);
@@ -70,53 +88,75 @@ export function HeroSlider() {
   return (
     <section id="home" className="hero" aria-roledescription="carousel" aria-label="Creative Fasteners USA overview">
       <div className="hero__media" aria-hidden="true">
-        <img src={activeSlide.poster} alt="" width="1920" height="1080" />
-        {showVideo ? (
-          <video
-            key={activeSlide.video}
-            ref={videoRef}
-            className="hero__video"
-            src={activeSlide.video}
-            poster={activeSlide.poster}
-            muted
-            autoPlay={!paused}
-            playsInline
-            preload="metadata"
-            onEnded={handleVideoEnded}
-          />
-        ) : null}
+        {heroSlides.map((slide, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={slide.id}
+              className={`hero__slide-media ${isActive ? 'is-active' : ''}`}
+            >
+              {showVideo ? (
+                <video
+                  ref={(el) => {
+                    videoRefs.current[index] = el;
+                  }}
+                  className="hero__video"
+                  src={slide.video}
+                  muted
+                  playsInline
+                  preload="auto"
+                  onEnded={() => {
+                    if (index === activeIndex) handleVideoEnded();
+                  }}
+                />
+              ) : (
+                <img src={slide.poster} alt="" width="1920" height="1080" />
+              )}
+            </div>
+          );
+        })}
       </div>
       <div className="hero__overlay" />
       <div className="hero__grid" aria-hidden="true" />
       <div className="hero__side-label" aria-hidden="true">CF—USA / PRECISION MANUFACTURING</div>
 
       <div className="hero__content shell">
-        <div className={`hero__copy hero__copy--${activeSlide.id}`} key={activeSlide.id} aria-live="polite">
-          <p className="hero__eyebrow">
-            <span />
-            {activeSlide.eyebrow}
-          </p>
-          <h1>
-            {activeSlide.headlineLead && activeSlide.headlineRest ? (
-              <>
-                <span className="hero__headline-lead">{activeSlide.headlineLead}</span>
-                <span className="hero__headline-rest">{activeSlide.headlineRest}</span>
-                {activeSlide.headlineFinal ? (
-                  <span className="hero__headline-final">{activeSlide.headlineFinal}</span>
-                ) : null}
-              </>
-            ) : activeSlide.headline}
-          </h1>
-          <p className="hero__description">{activeSlide.description}</p>
-          <div className="hero__actions">
-            <a className="button button--primary" href="#rfq">
-              Request a Quote
-            </a>
-            <a className="button button--ghost" href="#capabilities">
-              Explore Capabilities
-            </a>
-          </div>
-        </div>
+        {heroSlides.map((slide, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={slide.id}
+              className={`hero__copy hero__copy--${slide.id} ${isActive ? 'is-active' : ''}`}
+              aria-hidden={!isActive}
+              aria-live={isActive ? 'polite' : 'off'}
+            >
+              <p className="hero__eyebrow">
+                <span />
+                {slide.eyebrow}
+              </p>
+              <h1>
+                {slide.headlineLead && slide.headlineRest ? (
+                  <>
+                    <span className="hero__headline-lead">{slide.headlineLead}</span>
+                    <span className="hero__headline-rest">{slide.headlineRest}</span>
+                    {slide.headlineFinal ? (
+                      <span className="hero__headline-final">{slide.headlineFinal}</span>
+                    ) : null}
+                  </>
+                ) : slide.headline}
+              </h1>
+              <p className="hero__description">{slide.description}</p>
+              <div className="hero__actions">
+                <a className="button button--primary" href="#rfq">
+                  Request a Quote
+                </a>
+                <a className="button button--ghost" href="#capabilities">
+                  Explore Capabilities
+                </a>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       <div className="hero__controls shell">
