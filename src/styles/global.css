@@ -761,7 +761,7 @@ h3 {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(5, 13, 27, 0.64);
+  background: rgba(5, 13, 27, 0.8);
   color: var(--white);
   cursor: pointer;
   transition: background-color 180ms ease, border-color 180ms ease;
