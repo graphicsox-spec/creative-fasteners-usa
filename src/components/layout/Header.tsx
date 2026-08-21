@@ -4,7 +4,7 @@ import { navigation } from '../../content/homepage';
 const searchTargets = [
   { label: 'Home', href: '#home', terms: ['home', 'homepage'] },
   { label: 'Products', href: '#products', terms: ['product', 'products', 'fastener', 'fasteners'] },
-  { label: 'Capabilities', href: '#capabilities', terms: ['capability', 'capabilities', 'manufacturing', 'forming', 'threading', 'drilling', 'finish'] },
+  { label: 'Capabilities', href: '#capabilities', terms: ['capability', 'capabilities', 'manufacturing', 'forming', 'threading', 'drilling', 'finish', 'cold heading', 'thread rolling', 'dies', 'punch dies', 'trimming'] },
   { label: 'Quality', href: '#quality', terms: ['quality', 'inspection', 'traceability', 'process'] },
   { label: 'Industries', href: '#industries', terms: ['industry', 'industries', 'aerospace', 'defense', 'industrial'] },
   { label: 'About', href: '#about', terms: ['about', 'company', 'creative fasteners usa'] },
@@ -88,13 +88,13 @@ export function Header() {
         <div className="site-header__utility-inner shell">
           <div className="site-header__utility-marquee">
             <span className="site-header__utility-track">
-              <span>RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation&nbsp;&nbsp;•&nbsp;&nbsp;Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span aria-hidden="true">RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation&nbsp;&nbsp;•&nbsp;&nbsp;Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span>RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation&nbsp;&nbsp;•&nbsp;&nbsp;COLD HEADING • THREAD ROLLING • PUNCH DIES • TRIMMING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span aria-hidden="true">RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation&nbsp;&nbsp;•&nbsp;&nbsp;COLD HEADING • THREAD ROLLING • PUNCH DIES • TRIMMING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             </span>
           </div>
           <div className="site-header__utility-desktop">
             <span>RFQ Support&nbsp;&nbsp;|&nbsp;&nbsp;Made-to-Spec Review&nbsp;&nbsp;|&nbsp;&nbsp;Sales Contact Pending Client Confirmation</span>
-            <span>Aerospace&nbsp;&nbsp;•&nbsp;&nbsp;Defense&nbsp;&nbsp;•&nbsp;&nbsp;Precision</span>
+            <span>COLD HEADING • THREAD ROLLING • PUNCH DIES • TRIMMING</span>
           </div>
         </div>
       </div>

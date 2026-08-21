@@ -711,6 +711,7 @@ h3 {
 
 .hero__eyebrow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1.15rem;
@@ -744,12 +745,7 @@ h3 {
 }
 
 .hero__headline-rest {
-  max-width: 13ch;
-}
-
-.hero__copy--rfq .hero__headline-rest {
   max-width: none;
-  white-space: nowrap;
 }
 
 .hero__headline-final {
@@ -3317,9 +3313,11 @@ h3 {
 
   .hero__eyebrow {
     justify-content: center;
+    text-align: center;
     font-size: 0.63rem;
     line-height: 1.4;
     margin-bottom: 0.65rem;
+    flex-wrap: wrap;
   }
 
   .hero__eyebrow span {

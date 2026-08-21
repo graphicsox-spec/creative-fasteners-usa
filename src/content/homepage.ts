@@ -25,34 +25,38 @@ export const navigation = [
 
 const configuredHeroSlides: HeroSlide[] = [
   {
-    id: 'rfq',
+    id: 'cold-heading',
     enabled: true,
-    eyebrow: 'MADE TO SPEC • READY FOR REVIEW',
-    headline: 'YOUR REQUIREMENTS. OUR MANUFACTURING FOCUS.',
-    headlineLead: 'YOUR REQUIREMENTS.',
-    headlineRest: 'OUR MANUFACTURING FOCUS.',
+    eyebrow: 'COLD HEADING • PRECISION FORMING',
+    headline: 'PRECISION FASTENERS. FORMED FOR PERFORMANCE.',
+    headlineLead: 'PRECISION FASTENERS.',
+    headlineRest: 'FORMED FOR PERFORMANCE.',
     description:
-      'Share your drawing, part number, material, finish, quantity, and delivery needs for a focused RFQ review.',
+      'Cold heading capabilities supported by controlled tooling, progressive forming and responsive made-to-spec manufacturing.',
     video: assetPath('assets/media/hero/Video-01.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
   {
-    id: 'precision',
+    id: 'thread-rolling',
     enabled: true,
-    eyebrow: 'AEROSPACE • DEFENSE • PRECISION',
-    headline: 'MISSION-CRITICAL FASTENERS. BUILT WITH PRECISION.',
+    eyebrow: 'THREAD ROLLING • CONTROLLED THREADING',
+    headline: 'ACCURATE THREADS. CONSISTENT PERFORMANCE.',
+    headlineLead: 'ACCURATE THREADS.',
+    headlineRest: 'CONSISTENT PERFORMANCE.',
     description:
-      'Precision manufacturing backed by controlled processes, in-process inspection, and dependable execution.',
+      'Precision thread rolling and threading processes engineered for consistent profiles, dimensional accuracy and dependable fit.',
     video: assetPath('assets/media/hero/Video-02.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
   {
-    id: 'control',
+    id: 'tooling-dies',
     enabled: true,
-    eyebrow: 'CONTROLLED PROCESSES • VISIBLE QUALITY',
-    headline: 'PRECISION AT EVERY PRODUCTION STAGE.',
+    eyebrow: 'COLD HEADING DIES • PUNCH DIES • TRIMMING',
+    headline: 'CONTROLLED TOOLING AT EVERY FORMING STAGE.',
+    headlineLead: 'CONTROLLED TOOLING',
+    headlineRest: 'AT EVERY FORMING STAGE.',
     description:
-      'Structured routing and dimensional checks keep requirements visible from material review through final release.',
+      'Cold heading dies, punch dies and trimming operations support repeatable geometry from initial forming through final production.',
     video: assetPath('assets/media/hero/Video-03.mp4'),
     poster: assetPath('assets/media/hero/precision-fasteners-poster.webp'),
   },
@@ -71,10 +75,13 @@ export const trustItems = [
 export type CapabilityIcon =
   | 'forming'
   | 'threading'
-  | 'drilling'
+  | 'dies'
+  | 'tooling'
+  | 'trimming'
   | 'heat'
   | 'passivation'
-  | 'finishes';
+  | 'finishes'
+  | 'drilling';
 
 export const capabilities: Array<{
   number: string;
@@ -84,39 +91,52 @@ export const capabilities: Array<{
 }> = [
   {
     number: '01',
-    title: 'Hot and Cold Forming',
-    description: 'Forming requirements reviewed around geometry, material behavior, and intended application.',
+    title: 'Cold Heading',
+    description:
+      'Progressive cold forming processes that shape solid metal into strong, dimensionally consistent precision fasteners.',
     icon: 'forming',
   },
   {
     number: '02',
-    title: 'Pointing and Threading',
-    description: 'Thread and point configurations aligned to drawing requirements and functional fit.',
+    title: 'Thread Rolling & Threading',
+    description:
+      'Controlled rolling and threading processes that produce accurate thread profiles, consistent pitch and improved material strength.',
     icon: 'threading',
   },
   {
     number: '03',
-    title: 'Precision Drilling',
-    description: 'Controlled drilling approaches for features where location and dimensional consistency matter.',
-    icon: 'drilling',
+    title: 'Cold Heading Dies',
+    description:
+      'Cold heading die requirements reviewed around fastener geometry, material flow, dimensional accuracy and production repeatability.',
+    icon: 'dies',
   },
   {
     number: '04',
-    title: 'Heat Treating',
-    description: 'Heat-treatment requirements coordinated against material, specification, and performance needs.',
-    icon: 'heat',
+    title: 'Punch Dies & Tooling',
+    description:
+      'Precision punch dies and forming tooling support accurate head development across successive cold-heading stages.',
+    icon: 'tooling',
   },
   {
     number: '05',
-    title: 'Passivation',
-    description: 'Passivation requirements reviewed as part of the complete material and finish specification.',
-    icon: 'passivation',
+    title: 'Trimming & Secondary Operations',
+    description:
+      'Controlled trimming removes excess formed material and creates clean, consistent head profiles according to drawing requirements.',
+    icon: 'trimming',
   },
   {
     number: '06',
-    title: 'Plating and Specialized Finishes',
-    description: 'Finish requirements evaluated for compatibility, protection, and drawing compliance.',
-    icon: 'finishes',
+    title: 'Heat Treatment & Specialized Finishes',
+    description:
+      'Heat treatment, passivation, plating and specialized finishes coordinated around material, performance and specification requirements.',
+    icon: 'heat',
+  },
+  {
+    number: '07',
+    title: 'Precision Drilling',
+    description:
+      'Controlled drilling approaches for features where location and dimensional consistency matter.',
+    icon: 'drilling',
   },
 ];
 

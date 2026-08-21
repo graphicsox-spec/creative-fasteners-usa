@@ -42,6 +42,9 @@ export default function App() {
               <p>
                 We focus on made-to-spec fastener manufacturing support for aerospace, defense, and precision industrial applications—bringing process routing, in-process dimensional inspection, and clear RFQ communication into one coordinated approach.
               </p>
+              <p>
+                Creative Fasteners USA supports precision fastener production through cold heading, thread rolling, threading, cold heading dies, punch dies, trimming and coordinated secondary operations. Every manufacturing route is reviewed against the supplied drawing, material, tolerances and intended application.
+              </p>
               <a className="text-link" href="#quality">See the quality-control process <span aria-hidden="true">↗</span></a>
             </Reveal>
 
@@ -74,8 +77,8 @@ export default function App() {
                 <SectionHeading
                   number="02"
                   eyebrow="Manufacturing Capabilities"
-                  title="Built Around the Requirement"
-                  description="A focused set of manufacturing and finishing processes, presented for project-level review against the supplied drawing and specification."
+                  title="Cold Heading & Thread Rolling Capabilities"
+                  description="Integrated cold heading, thread rolling, threading, trimming and secondary manufacturing processes developed around your drawing, material and performance requirements."
                 />
                 <p className="section-note">Capability availability, process route, material compatibility, and specification fit are confirmed during RFQ review.</p>
               </div>

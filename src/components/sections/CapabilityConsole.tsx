@@ -3,17 +3,66 @@ import { capabilities, type CapabilityIcon as CapabilityIconName } from '../../c
 
 function CapabilityIcon({ name }: { name: CapabilityIconName }) {
   const paths: Record<CapabilityIconName, ReactNode> = {
-    forming: <><path d="M7 8h10v8H7z" /><path d="M4 4h4v4M20 4h-4v4M4 20h4v-4M20 20h-4v-4" /></>,
-    threading: <><path d="M5 7h14M5 11h14M5 15h14M5 19h14" /><path d="M8 4v16M16 4v16" /></>,
-    drilling: <><path d="M12 3v8" /><path d="M8 11h8l-4 10z" /><path d="M5 5h14" /></>,
-    heat: <>
-      <path d="M4 3h16v18H4zM4 8h16" />
-      <path d="M7 11h10v7H7z" />
-      <path d="M9.5 16c0-1 .8-1.35.8-2.35 0-.6-.25-1.05-.55-1.45M12 16c0-1 .8-1.35.8-2.35 0-.6-.25-1.05-.55-1.45M14.5 16c0-1 .8-1.35.8-2.35 0-.6-.25-1.05-.55-1.45" />
-      <path d="M7 21v1M17 21v1M17 5.5h1" />
-    </>,
-    passivation: <><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" /><path d="M9 12l2 2 4-5" /></>,
-    finishes: <><path d="M4 16l8-12 8 12" /><path d="M6 16h12v4H6z" /><path d="M9 12h6" /></>,
+    forming: (
+      <>
+        <path d="M7 8h10v8H7z" />
+        <path d="M4 4h4v4M20 4h-4v4M4 20h4v-4M20 20h-4v-4" />
+      </>
+    ),
+    threading: (
+      <>
+        <path d="M5 7h14M5 11h14M5 15h14M5 19h14" />
+        <path d="M8 4v16M16 4v16" />
+      </>
+    ),
+    dies: (
+      <>
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
+      </>
+    ),
+    tooling: (
+      <>
+        <path d="M6 3h12v5H6z" />
+        <path d="M9 8v6l3 7 3-7V8" />
+        <path d="M4 21h16" />
+      </>
+    ),
+    trimming: (
+      <>
+        <path d="M4 4l16 16M4 20L20 4" />
+        <circle cx="12" cy="12" r="8" />
+      </>
+    ),
+    drilling: (
+      <>
+        <path d="M12 3v8" />
+        <path d="M8 11h8l-4 10z" />
+        <path d="M5 5h14" />
+      </>
+    ),
+    heat: (
+      <>
+        <path d="M4 3h16v18H4zM4 8h16" />
+        <path d="M7 11h10v7H7z" />
+        <path d="M9.5 16c0-1 .8-1.35.8-2.35 0-.6-.25-1.05-.55-1.45M12 16c0-1 .8-1.35.8-2.35 0-.6-.25-1.05-.55-1.45M14.5 16c0-1 .8-1.35.8-2.35 0-.6-.25-1.05-.55-1.45" />
+        <path d="M7 21v1M17 21v1M17 5.5h1" />
+      </>
+    ),
+    passivation: (
+      <>
+        <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" />
+        <path d="M9 12l2 2 4-5" />
+      </>
+    ),
+    finishes: (
+      <>
+        <path d="M4 16l8-12 8 12" />
+        <path d="M6 16h12v4H6z" />
+        <path d="M9 12h6" />
+      </>
+    ),
   };
 
   return (
@@ -26,12 +75,13 @@ function CapabilityIcon({ name }: { name: CapabilityIconName }) {
 export function CapabilityConsole() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeCapability = capabilities[activeIndex];
+  const totalCapabilities = String(capabilities.length).padStart(2, '0');
 
   return (
     <div className="capability-console">
       <div className="capability-console__rail" aria-hidden="true">
         <span>Process selector</span>
-        <span>06 capability reviews</span>
+        <span>{totalCapabilities} capability reviews</span>
         <span>Drawing-led evaluation</span>
       </div>
 
@@ -67,7 +117,7 @@ export function CapabilityConsole() {
         >
           <div className="capability-console__grid" aria-hidden="true" />
           <div className="capability-console__stage-head">
-            <span className="capability-console__number">{activeCapability.number}<small>/06</small></span>
+            <span className="capability-console__number">{activeCapability.number}<small>/{totalCapabilities}</small></span>
             <div className="capability-console__icon">
               <CapabilityIcon name={activeCapability.icon} />
             </div>
